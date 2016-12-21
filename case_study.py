@@ -10,18 +10,19 @@ from pattern.en import parsetree
 from pattern.en import tag
 str_food=''
 str_place=''
-flag_q1=0
+flag_q1=0a
 flag_n1=0
 flag_n2=0
 merge_lst=[]
 list2=['was','am','is','does','are']
-sentenc="Amazing XXX at BBB !!!!" # Here XXX is the food and BBB is the place listed in XYZ csv file
+sentenc="Amazing XYZ at City Square Mall!!!" # here, XYZ is the food type and place is City Sqlare mall.
+#The dummy dataset XYZ.csv contains the list of food and places in CSV format.
 adjectvs=[]
 DT=[]
 i=0
 nouns=[]
 
-#eliminating all special characters(added after our discussion and it can handle sentences ending with exclamation)
+#eliminating all special characters(added after our discussion and it can handle sentences ending with exclamation
 
 word_lst=sentenc[-1].lower()
 
@@ -30,16 +31,14 @@ word_lst=sentenc[-1].lower()
 word_list=sentenc.split()
 sentenc = re.sub(r'[?|$|.|!]',r'',sentenc)
 word_fst=word_list[0].lower()
-print(word_lst)
 
-#loading the CSV file 
-df = pd.read_csv('XYZ.csv', names=['places','food '],skiprows=1) 
+#loading the CSV file into a dataframe and segregating the columns for street names and food
+df = pd.read_csv('XYZ.csv', names=['places','food'],skiprows=1)
 df['places']=df['places'].str.lower()
 df['food']=df['food'].str.lower()
 
 #parsing the sentence
 p_tree = parsetree(sentenc.lower(), relations=True, lemmata=True)
-pprint(parse(sentenc, relations=True, lemmata=True))
 
 #conditions to get the part of speech(pos) of the sentence and determining the intention of the sentence
 if word_fst in list2:
