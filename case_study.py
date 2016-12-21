@@ -10,7 +10,7 @@ from pattern.en import parsetree
 from pattern.en import tag
 str_food=''
 str_place=''
-flag_q1=0a
+flag_q1=0
 flag_n1=0
 flag_n2=0
 merge_lst=[]
