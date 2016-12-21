@@ -15,13 +15,13 @@ flag_n1=0
 flag_n2=0
 merge_lst=[]
 list2=['was','am','is','does','are']
-sentenc="Amazing (type in the food name) at (any place name) !!!!"
+sentenc="Amazing XXX at BBB !!!!" # Here XXX is the food and BBB is the place listed in XYZ csv file
 adjectvs=[]
 DT=[]
 i=0
 nouns=[]
 
-#eliminating all special characters(added after our discussion and it can handle sentences ending with exclamation
+#eliminating all special characters(added after our discussion and it can handle sentences ending with exclamation)
 
 word_lst=sentenc[-1].lower()
 
